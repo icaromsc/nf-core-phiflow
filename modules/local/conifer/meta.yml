@@ -1,0 +1,66 @@
+name: CONIFER
+description: Calculate confidence scores from Kraken2 output
+keywords:
+  - classify
+  - metagenomics
+  - kraken2
+  - score
+  - db
+tools:
+  - conifer:
+      description: Calculate confidence scores from Kraken2 output
+      homepage: https://github.com/Ivarz/Conifer/
+      licence: ["BSD / BSD-2-Clause"]
+input:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  - kraken_input:
+      type: file
+      description: |
+        Kraken2 classified reads output file
+  - kraken_db:
+      type: file
+      description: Kraken2 taxo.k2d database file
+  - save_all_reads:
+      type: string
+      description: |
+        If true, output all reads (including unclassified)
+  - add_summary_stats:
+      type: string
+      description: |
+        If true, output summary statistics for each taxonomy
+  - filter_by_confidence_score:
+      type: string
+      description: |
+        If true, filter kraken file by confidence score (0 to 1)
+  - report_rtl_score:
+      type: string
+      description: |
+        If true, report root-to-leaf score instead of confidence score
+  - report_both_scores:
+      type: string
+      description: |
+        If true, report confidence and root-to-leaf scores
+
+output:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  - score:
+      type: file
+      description: |
+        Conifer report file containing confidence scores stats of Kraken2 classified
+        reads.
+      pattern: "*.{report.txt}"
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+authors:
+  - "@icaromsc"
+  - "@rpetit3"
