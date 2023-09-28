@@ -12,13 +12,16 @@
 
 ## Introduction
 
-**nf-core/phiflow** is a bioinformatics pipeline that ...
+**nf-core/phiflow** is a bioinformatics pipeline that simultaneously characterize the microbial composition and host gene expression RNA sequencing samples. Given a list of samples from raw reads as input data (FASTQ) the pipeline performs several steps to produce two data matrices: Host gene expression matrix and Microbial composition matrix. These data matrices can help researchers to investigate the host transcriptome response under the presence of identified microbes and the association of microbial presence with specific host gene modules.
+
 
 <!-- TODO nf-core:
    Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
    major pipeline sections and the types of output it produces. You're giving an overview to someone new
    to nf-core here, in 15-20 seconds. For an example, see https://github.com/nf-core/rnaseq/blob/master/README.md#introduction
 -->
+
+![phiflow Overview](docs/images/workflow_pipeline_2023_updated.png)
 
 <!-- TODO nf-core: Include a figure that guides the user through the major workflow steps. Many nf-core
      workflows use the "tube map" design for that. See https://nf-co.re/docs/contributing/design_guidelines#examples for examples.   -->
@@ -80,6 +83,7 @@ nf-core/phiflow was originally written by Icaro Castro.
 
 We thank the following people for their extensive assistance in the development of this pipeline:
 
+Robert A. Petit III @rpetit3
 <!-- TODO nf-core: If applicable, make list of people who have also contributed -->
 
 ## Contributions and Support
