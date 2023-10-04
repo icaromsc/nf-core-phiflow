@@ -27,8 +27,13 @@
      workflows use the "tube map" design for that. See https://nf-co.re/docs/contributing/design_guidelines#examples for examples.   -->
 <!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
 
-1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
-2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+1. Read QC ([`fastp`](https://github.com/OpenGene/fastp))
+2. Read alignment to the human host genome ([`STAR`](https://github.com/alexdobin/STAR))
+3. Infer library strandedness ([`RSeQC`](https://rseqc.sourceforge.net/))
+4. Quantify host gene expression ([`subread:featureCounts`](https://github.com/ShiLab-Bioinformatics/subread))
+5. Taxonomic profiling of host unmapped reads ([`Kraken2`](https://ccb.jhu.edu/software/kraken2/))
+6. Calculate confidence scores from Kraken2 taxonomic profiling ([`Conifer`](https://github.com/ivarz/conifer))
+7. Present summary of all previous processing steps ([`MultiQC`](http://multiqc.info/))
 
 ## Usage
 
